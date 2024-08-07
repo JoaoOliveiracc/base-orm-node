@@ -8,6 +8,20 @@ class Services {
   async getAllRegisters() {
     return dataSource[this.model].findAll();
   }
+
+  async updateRegister(updatedData, id) {
+    const listUpdatedRegister = dataSource[this.model].update(updatedData, {
+      where: {
+        id: id
+      }
+    });
+
+    if (listUpdatedRegister[0] === 0) {
+      return false;
+    }
+
+    return true;
+  }
 }
 
 module.exports = Services;
