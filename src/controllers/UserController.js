@@ -9,4 +9,4 @@ class UserController extends Controller {
   }
 }
 
-module.exports = UserController;
+module.exports = { UserController };  // Use exportação nomeada aqui
